@@ -1,3 +1,25 @@
+// // Initialize Firebase
+//   var config = {
+//     apiKey: "AIzaSyCS_LJiMZGK0YtgqxqKgj4eGPD2obBOMpI",
+//     authDomain: "atmos-bcd7a.firebaseapp.com",
+//     databaseURL: "https://atmos-bcd7a.firebaseio.com",
+//     projectId: "atmos-bcd7a",
+//     storageBucket: "atmos-bcd7a.appspot.com",
+//     messagingSenderId: "671205675180"
+//   };
+//   firebase.initializeApp(config);
+
+//  // Create a variable to reference the database.
+// 	var database = firebase.database();
+
+// // Create a variable for current time.
+//   var currentTime = moment();
+ 
+// $(document).ready(function(){
+//     $('.parallax').parallax();
+//   });
+
+
 //------------------//
 // All Stations API //
 //------------------//
@@ -8,14 +30,14 @@ $("#").on("click", function(event) {
   event.preventDefault();
 
   // Grabbing inputs to be stored as variables to be used in the URL
-  var fuelType = "all";
-  var state = "NC"
-  var connectorType = "all"
-  var zip = "27612"
-  var chargingLevel = "all";
+  var state = $("#state").val();
+  var connectorType = $("#connector-type").val();
+  var zip = $("#zip").val();
+  var chargingLevel = $("#charging-level").val();
 
   // Creating URL using the inputs to search for fuel stations in the API
-  var queryURL = "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?zip=" + zip + ",ELEC&state=" + state + ",fuel_type=" + fuelType + ",ev_connector_type=" + connectorType + ",ev_charging_level" + chargingLevel + ",status=E&limit=5&api_key=Kp6yrK20RheYpq1WjTLs2727PEW21APTLYCC2XHE&format=JSON";
+  var queryURL = "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?zip=" + zip + ",ELEC&state=" + state + ",ev_connector_type=" + connectorType + ",ev_charging_level" + chargingLevel + ",status=E&limit=5&api_key=Kp6yrK20RheYpq1WjTLs2727PEW21APTLYCC2XHE&format=JSON";
+  console.log(queryURL);
 
   // AJAX call to get the API
   $.ajax({
@@ -29,7 +51,7 @@ $("#").on("click", function(event) {
     var results = response.fuel_stations;
     console.log(results);
 
-    // For loop to store the individual station information in variables
+    // For loop to store the individual station information as variables
     for (var i = 0; i < results.length; i++) {
       var stationName = results[i].station_name;
       console.log(stationName);
