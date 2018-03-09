@@ -2,9 +2,10 @@
 // All Stations API //
 //------------------//
 
-
-// $("#").on("click", function(event) {
-//   event.preventDefault();
+// Function to grab inputs and get the API information
+$("#").on("click", function(event) {
+  //Preventing the page from reloading after the button is clicked
+  event.preventDefault();
 
   // Grabbing inputs to be stored as variables to be used in the URL
   var fuelType = "all";
@@ -13,8 +14,10 @@
   var zip = "27612"
   var chargingLevel = "all";
 
+  // Creating URL using the inputs to search for fuel stations in the API
   var queryURL = "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?zip=" + zip + ",ELEC&state=" + state + ",fuel_type=" + fuelType + ",ev_connector_type=" + connectorType + ",ev_charging_level" + chargingLevel + ",status=E&limit=5&api_key=Kp6yrK20RheYpq1WjTLs2727PEW21APTLYCC2XHE&format=JSON";
 
+  // AJAX call to get the API
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -22,9 +25,11 @@
 
     console.log(response);
 
+    // Storing the fuel stations array as a variable
     var results = response.fuel_stations;
     console.log(results);
 
+    // For loop to store the individual station information in variables
     for (var i = 0; i < results.length; i++) {
       var stationName = results[i].station_name;
       console.log(stationName);
@@ -50,4 +55,4 @@
       console.log(fillType);
     };
   });
-// });
+});
