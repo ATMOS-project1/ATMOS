@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Element Transitions - Startup</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/startup-materialize.min.css">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!--////////-->
+    <!-- Navbar -->
+    <!--////////-->
+    <nav class="teal accent-4" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">Navbar Link</a>
+                </li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li>
+                    <a href="#">Navbar Link</a>
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Page Layout here -->
+    <div class="row">
+
+        <div class="col s12 m4 l3">
+            <!-- Note that "m4 l3" was added -->
+            <!-- Grey navigation panel -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="input-field col s12" id="state">
+                        <select>
+                            <option value="" disabled selected>State</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label></label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="input-field col s12" id="zip">
+                        <select multiple>
+                            <option value="" disabled selected>Zip</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label></label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="input-field col s12" id="charging-level">
+                        <select class="icons">
+                            <option value="" disabled selected>Charging Level</option>
+                            <option value="" data-icon="images/sample-1.jpg" class="circle">example 1</option>
+                            <option value="" data-icon="images/office.jpg" class="circle">example 2</option>
+                            <option value="" data-icon="images/yuna.jpg" class="circle">example 3</option>
+                        </select>
+                        <label></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12" id="connector-type">
+                        <select class="icons">
+                            <option value="" disabled selected>Connector Type</option>
+                            <option value="" data-icon="images/sample-1.jpg" class="left circle">example 1</option>
+                            <option value="" data-icon="images/office.jpg" class="left circle">example 2</option>
+                            <option value="" data-icon="images/yuna.jpg" class="left circle">example 3</option>
+                        </select>
+                        <label></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col s12 m8 l9">
+            <div class="container">
+                <div class="row">
+                         <!-- Note that "m8 l9" was added -->
+                    <img class="responsive-img" src="assets/img/APPLIED LARGE Google map.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--/////////////-->
+            <!-- App Section -->
+            <!--/////////////-->
+
+            <!-- Form -->
+            <!-- <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="input-field col s4" id="state">
+                        <select>
+                            <option value="" disabled selected>State</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label></label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="input-field col s4" id="zip">
+                        <select multiple>
+                            <option value="" disabled selected>Zip</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label></label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="input-field col s4" id="charging-level">
+                        <select class="icons">
+                            <option value="" disabled selected>Charging Level</option>
+                            <option value="" data-icon="images/sample-1.jpg" class="circle">example 1</option>
+                            <option value="" data-icon="images/office.jpg" class="circle">example 2</option>
+                            <option value="" data-icon="images/yuna.jpg" class="circle">example 3</option>
+                        </select>
+                        <label></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s4" id="connector-type">
+                        <select class="icons">
+                            <option value="" disabled selected>Connector Type</option>
+                            <option value="" data-icon="images/sample-1.jpg" class="left circle">example 1</option>
+                            <option value="" data-icon="images/office.jpg" class="left circle">example 2</option>
+                            <option value="" data-icon="images/yuna.jpg" class="left circle">example 3</option>
+                        </select>
+                        <label></label>
+                    </div>
+                </div>
+
+                <!-- Map -->
+            <!-- <div class="col s12 m4">
+                        <img src="assets/img/Show-Nearby-Places-jQuery-Google-Maps-WhatsNearby.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>  -->
+
+
+
+
+
+            <!-- Scripts -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="assets/javascript/materialize.min.js"></script>
+
+            <!-- External libraries -->
+            <script src="assets/javascript/imagesloaded.pkgd.min.js"></script>
+            <script src="assets/javascript/masonry.pkgd.min.js"></script>
+            <script src="assets/javascript/TweenMax.min.js"></script>
+            <script src="assets/javascript/ScrollMagic.min.js"></script>
+            <script src="assets/javascript/animation.gsap.min.js"></script>
+
+            <!-- Initialization script -->
+            <script src="assets/javascript/startup.js"></script>
+            <script src="assets/javascript/init.js"></script>
+</body>
+
+</html>
+
+<!-- assets/javascript -->
