@@ -25,7 +25,7 @@
 //------------------//
 
 // Function to grab inputs and get the API information
-$("#").on("click", function(event) {
+$("#submit").on("click", function(event) {
   //Preventing the page from reloading after the button is clicked
   event.preventDefault();
 
