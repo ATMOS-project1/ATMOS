@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Google Maps JavaScript API</title>
+	<link rel="stylesheet" href="gmap.css">
+</head>
+
+<body>
+
+	<label for="">Current Location:
+		<input id="map-location" class="controls" type="text" placeholder="Your Location" size="104">
+	</label>
+	<br>
+	<label for="">Lat:
+		<input type="text" class="location-lat">
+	</label>
+	<label for="">Long:
+		<input type="text" class="location-long">
+	</label>
+	<br>
+
+	<label for="">Destination Address:
+		<input id="map-search" class="controls" type="text" placeholder="Choose Destination" size="104">
+	</label>
+	<br>
+	<label for="">Lat:
+		<input type="text" class="latitude">
+	</label>
+	<label for="">Long:
+		<input type="text" class="longitude">
+	</label>
+
+
+	<div id="map-canvas"></div>
+
+	<script src="gmap.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-ioPheidDGw5CGcEGrNxT6u3EniKOjnI&libraries=places&callback=initialize"></script>
+</body>
+
+</html>
