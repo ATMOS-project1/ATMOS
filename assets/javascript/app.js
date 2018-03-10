@@ -49,8 +49,9 @@ $(".btn").on("click", function(event) {
       console.log(stationLong)
       console.log(stationLat)
 
-      // Setting a data attribute to store the address to be used in other API
-      stationRow.attr("data-address", stationAddress);
+      // Setting data attributes to lat and long
+      stationRow.attr("data-latitude", stationLat);
+      stationRow.attr("data-longitude", stationLong);
 
       // Displaying the station information in a new table row
       $(stationRow).append("<td>" + stationName + "</td><td>" + stationAddress + "</td><td>" +
