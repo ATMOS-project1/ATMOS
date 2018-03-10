@@ -1,28 +1,21 @@
-var optionA, optionB;
-
 function initialize() {
 
-	var mapOptions, map, marker, searchBox, info, pos,
+	var mapOptions, map, marker, searchBox,
 		infoWindow = '';
-		locationEl = document.querySelector( '#map-location' ),
 		addressEl = document.querySelector( '#map-search' ),
 		latEl = document.querySelector( '.latitude' ),
-		locationLat = document.querySelector( '.location-lat' ),
 		longEl = document.querySelector( '.longitude' ),
-		locationLong = document.querySelector( '.location-long' ),
 		element = document.getElementById( 'map-canvas' );
 
 	mapOptions = {
 		// How far the maps zooms in.
 		zoom: 8,
-		
 		// Current Lat and Long position of the pin/
 		center: new google.maps.LatLng( -34.397, 150.644 ),
-		
+	
 		disableDefaultUI: false, // Disables the controls like zoom control on the map if set to true
 		scrollWheel: true, // If set to false disables the scrolling on the map.
 		draggable: true, // If set to false , you cannot move the map around.
-		
 		// mapTypeId: google.maps.MapTypeId.HYBRID, // If set to HYBRID its between sat and ROADMAP, Can be set to SATELLITE as well.
 		// maxZoom: 11, // Wont allow you to zoom more than this
 		// minZoom: 9  // Wont allow you to go more up.
@@ -36,68 +29,6 @@ function initialize() {
 	 */
 	// Create an object map with the constructor function Map()
 	map = new google.maps.Map( element, mapOptions ); // Till this like of code it loads up the map.
-
-	// Creates Geolocation.
-	function geolocation() {
-    	info = new google.maps.InfoWindow();
-
-		if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			pos = { lat: position.coords.latitude, lng: position.coords.longitude };
-			optionA = pos;
-
-			info.setPosition(pos);
-			info.setContent("You are Here..!!");
-			info.open(map);
-
-
-			// Append to current location address
-		var geocoderOne = new google.maps.Geocoder();
-		geocoderOne.geocode( { latLng: pos }, function ( result, status ) {
-			if ( 'OK' === status ) {  // This line can also be written like if ( status == google.maps.GeocoderStatus.OK ) {
-				address = result[0].formatted_address;
-				locationEl.value = address;
-				locationLat.value = pos.lat;
-				locationLong.value = pos.lng;
-				// console.log(address, locationEl, locationLat, locationLong);
-
-			} else {
-			// 	console.log( 'Geocode was not successful for the following reason: ' + status );
-			}
-
-			// // Closes the previous info window if it already exists
-				if ( info ) {
-					info.close();
-				}
-			
-		} );
-			
-		
-			}, function() {
-			handleLocationError(true, info, map.getCenter());
-			});
-		} else {
-			// Browser dosen't support Geolocation
-			handleLocationError(false, info, map.getCenter());
-		}
-
-
-	}
-
-	// Error message
-	function handleLocationError(browserHasGeolocation, info, pos) {
-		info.setPosition(pos);
-		info.setContent(browserHasGeolocation ?
-						'Error: The Geolocation service failed.' :
-						'Error: Your browser doesn\'t support Geolocation.'
-					);
-		
-		info.open(map);
-	}
-
-	geolocation()
-	console.log(optionA);
-
 
 	/**
 	 * Creates the marker on the map
@@ -113,6 +44,7 @@ function initialize() {
 	/**
 	 * Creates a search box
 	 */
+	console.log(addressEl)
 	searchBox = new google.maps.places.SearchBox( addressEl );
 
 	/**
@@ -130,7 +62,7 @@ function initialize() {
 		}
 
 		map.fitBounds( bounds );  // Fit to the bound
-		map.setZoom( 10 ); // This function sets the zoom to 15, meaning zooms to level 15.
+		map.setZoom( 15 ); // This function sets the zoom to 15, meaning zooms to level 15.
 		// console.log( map.getZoom() );
 		lat = marker.getPosition().lat();
 		long = marker.getPosition().lng();
@@ -189,6 +121,6 @@ function initialize() {
 			infoWindow.open( map, marker );
 		} );
 	});
-}
 
-setTimeout(function () {console.log(optionA)},7000);
+
+}

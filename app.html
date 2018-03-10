@@ -158,8 +158,21 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 byebye">
-                    <img class="map" src="assets/img/APPLIED LARGE Google map.jpg" alt="">
+                 <div id="map-canvas"></div> 
+                    <!-- <img class="map" src="assets/img/APPLIED LARGE Google map.jpg" alt=""> -->
                 </div>
+
+                <!-- <label for="">Destination Address:
+                    <input id="map-search" class="controls" type="text" placeholder="Choose Destination" size="104">
+                </label>
+                <br>
+                <label for="">Lat:
+                    <input type="text" class="latitude">
+                </label>
+                <label for="">Long:
+                    <input type="text" class="longitude">
+                </label> -->
+            
 
                 <!-- /////////// -->
                 <!-- info output -->
@@ -182,7 +195,7 @@
             </div>
         </div>
 
-
+        
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="assets/javascript/materialize.min.js"></script>
@@ -198,6 +211,9 @@
         <!-- Initialization script -->
         <script src="assets/javascript/startup.js"></script>
         <script src="assets/javascript/init.js"></script>
+        <script src="assets/javascript/gmap.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-ioPheidDGw5CGcEGrNxT6u3EniKOjnI&libraries=places&callback=initialize"></script>
+       
 </body>
 
 </html>
