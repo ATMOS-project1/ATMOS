@@ -51,30 +51,56 @@ $("#").on("click", function(event) {
     var results = response.fuel_stations;
     console.log(results);
 
-    // For loop to store the individual station information as variables
+    // For loop to store the individual station information as variables and displaying them
     for (var i = 0; i < results.length; i++) {
+      // Emptying the div holding any prior station information
+      $("#").empty();
+
+      // Creating new div for each fuel station
+      var stationDiv = $("<div>");
+      
+      // Storing information in variables
       var stationName = results[i].station_name;
-      console.log(stationName);
       var stationAddress = results[i].street_address + " " + results[i].city + " " + results[i].state + " " + results[i].zip;
-      console.log(stationAddress);
       var stationHours = results[i].access_days_time;
-      console.log(stationHours);
       var stationPhone = results[i].station_phone;
-      console.log(stationPhone);
       var cardsAccepted = results[i].cards_accepted;
-      console.log(cardsAccepted);
       var stationStatus = results[i].status_code;
-      console.log(stationStatus);
       //Need to look over how best to store charging level
       var chargingLevel = "";
       var stationAccess = results[i].groups_with_access_code;
-      console.log(stationAccess);
       var connectorTypes = results[i].ev_connector_types;
-      console.log(connectorTypes);
       var fuelType = results[i].fuel_type_code;
-      console.log(fuelType);
       var fillType = results[i].ng_fill_type_code;
-      console.log(fillType);
+
+      // Creating an element to have the rating displayed
+      var ratingP = $("<p>").text("Rating: " + rating);
+
+      // Displaying the rating
+      gifDiv.append(ratingP);
+
+      // Creating an image for the gifs
+      var sportImage = $("<img class='gif'>")
+            
+      // Giving image attribute to store still gif
+      sportImage.attr("data-still", results[i].images.original_still.url);
+
+      // Storing the original gif            
+      var originalGIF = results[i].images.original.url;
+      console.log(originalGIF);
+
+      // Giving the image an attribute for the original gif
+      sportImage.attr("data-animate", originalGIF);
+      // console.log(sportImage.attr("date-animate"));
+
+      // Giving the image an attribute for data-state to be used later
+      sportImage.attr("data-state", "still");
+
+      // Displaying the gifs
+      gifDiv.append(sportImage);
+
+      // Putting the gifs at the top of the div
+	    $("#").append(stationDiv);
     };
   });
 });
