@@ -1,11 +1,35 @@
+var stationLatLong = [""]
+    
+    $("tbody").each(function(){
+      $(this).find('tr').each(function(){
+        
+        var rowLat = $(this).attr("data-latitude");
+          console.log(rowLat);
+        var rowLong = $(this).attr("data-longitude");
+          console.log(rowLong);
+        var rowLatLong = {
+          lat: rowLat,
+          long: rowLong
+          
+        };
+        console.log(rowLatLong);
+        stationLatLong.push(rowLatLong);
+		console.log(stationLatLong);
+		});
+      });
+
 function initialize() {
 
+	// for (var i=0; i < stationLatLong.length; i++) {
 	var mapOptions, map, marker, searchBox,
 		infoWindow = '';
 		addressEl = document.querySelector( '#map-search' ),
 		latEl = document.querySelector( '.latitude' ),
 		longEl = document.querySelector( '.longitude' ),
 		element = document.getElementById( 'map-canvas' );
+
+	var objectLat = parseInt([i].lat);
+	console.log(objectLat);
 
 	mapOptions = {
 		// How far the maps zooms in.
@@ -122,5 +146,5 @@ function initialize() {
 		} );
 	});
 
-
+// }
 }
