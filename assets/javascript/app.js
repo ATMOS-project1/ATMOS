@@ -3,7 +3,7 @@
 //------------------//
 
 // Function to grab inputs and get the API information
-$(".btn").on("click", function(event) {
+$("#submit").on("click", function(event) {
   //Preventing the page from reloading after the button is clicked
   event.preventDefault();
 
@@ -58,9 +58,4 @@ $(".btn").on("click", function(event) {
       stationHours + "</td><td>" + stationPhone + "</td>");
     };
   });
-
-  // $("#state").val("");
-  // $("#connector-type").val("");
-  // $("#zip").val("");
-  // $("#charging-level").val("");
 });
