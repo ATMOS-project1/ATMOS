@@ -80,7 +80,7 @@ $("#submit").on("click", function(event) {
       });
     });
 
-    // initialize(stationLatLong);
+    initialize(stationLatLong);
 
   });
 });
