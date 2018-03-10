@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Element Transitions - Startup</title>
+    <title>Atmos-App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,13 +31,13 @@
                     <li class="active">
             </a>
             <li>
-                <a href="#">Use Our App!</a>
+                <a href="index.html">Our Website!</a>
             </li>
             </ul>
             </a>
-            <a href="#" data-activates="slide-out" class="button-collapse right">
+            <!-- <a href="#" data-activates="slide-out" class="button-collapse right">
                 <i class="material-icons white-text">menu</i>
-            </a>
+            </a> -->
         </div>
     </nav>
 
@@ -53,7 +53,7 @@
                     <div class="collapsible-body">
                         <ul>
                             <li>
-                                <a href="#">Use Our App!</a>
+                                <a href="index.html">About Atmos!</a>
                             </li>
                         </ul>
                     </div>
@@ -68,7 +68,7 @@
     <!--////////-->
     <div class="section header">
         <div class="background">
-            <img src="assets/img/index.jpeg" alt="">
+            <img src="assets/img/evc.jpg" alt="">
         </div>
         <div class="header-wrapper row valign-wrapper">
             <div class="col s12">
@@ -91,83 +91,116 @@
     <!-- /// -->
     <!--Form -->
     <!-- /// -->
-    <div class="container col s12 scrollspy">
-        <div class="row">
-            <div class="input-field col s12" id="state">
-                <select>
-                    <option value="" disabled selected>State</option>
-                    <option value="#">Option 1</option>
-                    <option value="#">Option 2</option>
-                    <option value="#">Option 3</option>
-                </select>
-                <label></label>
+    <div class="section">
+        <div class="container col s12 scrollspy">
+            <div class="row">
+                <div class="input-field col s12" id="state">
+                    <select>
+                        <option value="" disabled selected>State</option>
+                        <option value="#">Option 1</option>
+                        <option value="#">Option 2</option>
+                        <option value="#">Option 3</option>
+                    </select>
+                    <label></label>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="input-field col s12" id="zip">
+                    <input placeholder="Zip Code" id="zip" type="text" class="validate">
+                    <label for="zip"></label>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="input-field col s12" id="charging-level">
+                    <select class="icons">
+                        <option value="" disabled selected>Charging Level</option>
+                        <option value="" data-icon="#" class="circle">example 1</option>
+                        <option value="" data-icon="#" class="circle">example 2</option>
+                        <option value="" data-icon="#" class="circle">example 3</option>
+                    </select>
+                    <label></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12" id="connector-type">
+                    <select class="icons">
+                        <option value="" disabled selected>Connector Type</option>
+                        <option value="" data-icon="#" class="left circle">example 1</option>
+                        <option value="" data-icon="#" class="left circle">example 2</option>
+                        <option value="" data-icon="#" class="left circle">example 3</option>
+                    </select>
+                    <label></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <button class="btn waves-effect waves-teal" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
             </div>
         </div>
 
 
-        <div class="row">
-            <div class="input-field col s12" id="zip">
-                <input placeholder="Zip Code" id="zip" type="text" class="validate">
-                <label for="zip"></label>
+        <!-- /// -->
+        <!-- Map -->
+        <!-- /// -->
+        <div class="col s12 m6">
+            <div class="container">
+                <div class="row">
+                    <img class="map" src="assets/img/APPLIED LARGE Google map.jpg" alt="">
+                </div>
             </div>
-        </div>
-
-
-
-        <div class="row">
-            <div class="input-field col s12" id="charging-level">
-                <select class="icons">
-                    <option value="" disabled selected>Charging Level</option>
-                    <option value="" data-icon="#" class="circle">example 1</option>
-                    <option value="" data-icon="#" class="circle">example 2</option>
-                    <option value="" data-icon="#" class="circle">example 3</option>
-                </select>
-                <label></label>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="input-field col s12" id="connector-type">
-                <select class="icons">
-                    <option value="" disabled selected>Connector Type</option>
-                    <option value="" data-icon="#" class="left circle">example 1</option>
-                    <option value="" data-icon="#" class="left circle">example 2</option>
-                    <option value="" data-icon="#" class="left circle">example 3</option>
-                </select>
-                <label></label>
-            </div>
-        </div>
-
-        <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
         </div>
     </div>
-
-
-    <!-- /// -->
-    <!-- Map -->
-    <!-- /// -->
+    <!-- /////////// -->
+    <!-- info output -->
+    <!-- /////////// -->
     <div class="col s12 m6">
         <div class="container">
             <div class="row">
-                <!-- Note that "m8 l9" was added -->
-                <img class="map" src="assets/img/APPLIED LARGE Google map.jpg" alt="">
+                <table class="centered teal accent-4">
+                    <thead>
+                        <tr>
+                            <th>Station Name</th>
+                            <th>Sreet Address</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Alvin</td>
+                            <td>Eclair</td>
+                            <td>$0.87</td>
+                        </tr>
+                        <tr>
+                            <td>Alan</td>
+                            <td>Jellybean</td>
+                            <td>$3.76</td>
+                        </tr>
+                        <tr>
+                            <td>Jonathan</td>
+                            <td>Lollipop</td>
+                            <td>$7.00</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-
-
-
-
 
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="assets/javascript/materialize.min.js"></script>
     <script src="assets/javascript/app.js"></script>
-    
+
     <!-- External libraries -->
     <script src="assets/javascript/imagesloaded.pkgd.min.js"></script>
     <script src="assets/javascript/masonry.pkgd.min.js"></script>
