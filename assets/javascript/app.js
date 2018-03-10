@@ -43,6 +43,12 @@ $(".btn").on("click", function(event) {
       var stationHours = results[i].access_days_time;
       var stationPhone = results[i].station_phone;
 
+      // Storing latitude and longitude to be used with Google Maps API
+      var stationLat = results[i].latitude;
+      var stationLong = results[i].longitude;
+      console.log(stationLong)
+      console.log(stationLat)
+
       // Setting a data attribute to store the address to be used in other API
       stationRow.attr("data-address", stationAddress);
 
