@@ -94,12 +94,12 @@
     <div class="section tall">
         <div class="container col s12 scrollspy">
             <div class="row">
-                <div class="input-field col s12" id="state">
-                    <select>
+                <div class="input-field col s12">
+                    <select  id="state">
                         <option value="" disabled selected>State</option>
-                        <option value="#">North Carolina</option>
-                        <option value="#">South Carolina</option>
-                        <option value="#">Georgia</option>
+                        <option value="NC">NC</option>
+                        <option value="">South Carolina</option>
+                        <option value="">Georgia</option>
                     </select>
                     <label></label>
                 </div>
@@ -117,6 +117,7 @@
                 <div class="input-field col s12" id="charging-level">
                     <select class="icons">
                         <option value="" disabled selected>Charging Level</option>
+                        <option value="" data-icon="#" class="circle">all</option>
                         <option value="" data-icon="#" class="circle">1</option>
                         <option value="" data-icon="#" class="circle">2</option>
                         <option value="" data-icon="#" class="circle">dc-fast</option>
