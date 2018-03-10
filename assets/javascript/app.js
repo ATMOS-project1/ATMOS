@@ -46,8 +46,6 @@ $("#submit").on("click", function(event) {
       // Storing latitude and longitude to be used with Google Maps API
       var stationLat = results[i].latitude;
       var stationLong = results[i].longitude;
-      console.log(stationLong)
-      console.log(stationLat)
 
       // Setting data attributes to lat and long
       stationRow.attr("data-latitude", stationLat);
