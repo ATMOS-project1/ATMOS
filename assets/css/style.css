@@ -1,1 +1,15 @@
-Test
+.material-icons {
+    color: #ffffff;
+}
+
+.map {
+    max-width: 100%;
+}
+
+.tall {
+    height: auto !important;
+}
+
+.byebye {
+    margin-bottom: -10px !important;
+}
