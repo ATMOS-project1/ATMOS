@@ -91,37 +91,37 @@
     <!-- /// -->
     <!--Form -->
     <!-- /// -->
-    <div class="section tall">
+    <div class="section">
         <div class="container col s12 scrollspy">
             <div class="row">
-                <div class="input-field col s12">
-                    <select  id="state">
+                <div class="input-field col s12" id="state">
+                    <select>
                         <option value="" disabled selected>State</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="GA">Georgia</option>
+                        <option value="#">Option 1</option>
+                        <option value="#">Option 2</option>
+                        <option value="#">Option 3</option>
                     </select>
                     <label></label>
                 </div>
             </div>
 
+
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12" id="zip">
                     <input placeholder="Zip Code" id="zip" type="text" class="validate">
                     <label for="zip"></label>
                 </div>
             </div>
 
 
+
             <div class="row">
                 <div class="input-field col s12" id="charging-level">
                     <select class="icons">
                         <option value="" disabled selected>Charging Level</option>
-                        <option value="all" data-icon="#" class="circle">All</option>
-                        <option value="1" data-icon="#" class="circle">Standard 110V Outlet</option>
-                        <option value="2" data-icon="#" class="circle">J1772 Connector</option>
-                        <option value="dc-fast" data-icon="#" class="circle">DC Fast Charging</option>
-                        <option value="legacy" data-icon="#" class="circle">Legacy Charging</option>
+                        <option value="" data-icon="#" class="circle">example 1</option>
+                        <option value="" data-icon="#" class="circle">example 2</option>
+                        <option value="" data-icon="#" class="circle">example 3</option>
                     </select>
                     <label></label>
                 </div>
@@ -131,21 +131,16 @@
                 <div class="input-field col s12" id="connector-type">
                     <select class="icons">
                         <option value="" disabled selected>Connector Type</option>
-                        <option value="all" data-icon="#" class="left circle">All</option>
-                        <option value="NEMA515" data-icon="#" class="left circle">NEMA 5-15</option>
-                        <option value="NEMA520" data-icon="#" class="left circle">NEMA 5-20</option>
-                        <option value="NEMA1450" data-icon="#" class="left circle">NEMA 14-50</option>
-                        <option value="J1772" data-icon="#" class="left circle">J1772</option>
-                        <option value="CHADEMO" data-icon="#" class="left circle">CHAdeMO</option>
-                        <option value="J1772COMBO" data-icon="#" class="left circle">SAE J1772 Combo</option>
-                        <option value="TESLA" data-icon="#" class="left circle">Tesla</option>
+                        <option value="" data-icon="#" class="left circle">example 1</option>
+                        <option value="" data-icon="#" class="left circle">example 2</option>
+                        <option value="" data-icon="#" class="left circle">example 3</option>
                     </select>
                     <label></label>
                 </div>
             </div>
 
             <div class="row">
-                <button class="btn waves-effect waves-teal read-more" id="submit" type="submit" name="action">Submit
+                <button class="btn waves-effect waves-teal" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </div>
@@ -155,11 +150,31 @@
         <!-- /// -->
         <!-- Map -->
         <!-- /// -->
+<<<<<<< HEAD
+        <div class="col s12 m6">
+            <div class="container">
+                <div class="row">
+                    <img class="map" src="assets/img/APPLIED LARGE Google map.jpg" alt="">
+                </div>
+=======
         <div class="container">
             <div class="row">
                 <div class="col s12 byebye">
-                    <img class="map" src="assets/img/APPLIED LARGE Google map.jpg" alt="">
+                 <div id="map-canvas"></div> 
+                    <!-- <img class="map" src="assets/img/APPLIED LARGE Google map.jpg" alt=""> -->
                 </div>
+
+                <!-- <label for="">Destination Address:
+                    <input id="map-search" class="controls" type="text" placeholder="Choose Destination" size="104">
+                </label>
+                <br>
+                <label for="">Lat:
+                    <input type="text" class="latitude">
+                </label>
+                <label for="">Long:
+                    <input type="text" class="longitude">
+                </label> -->
+            
 
                 <!-- /////////// -->
                 <!-- info output -->
@@ -179,25 +194,80 @@
                         </tbody>
                     </table>
                 </div>
+>>>>>>> a1833cff4d6b7e6444c2c5930106dcef8d531422
             </div>
         </div>
+    </div>
+    <!-- /////////// -->
+    <!-- info output -->
+    <!-- /////////// -->
+    <div class="col s12 m6">
+        <div class="container">
+            <div class="row">
+                <table class="centered teal accent-4">
+                    <thead>
+                        <tr>
+                            <th>Station Name</th>
+                            <th>Sreet Address</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
+                        <tr>
+                            <td>Alvin</td>
+                            <td>Eclair</td>
+                            <td>$0.87</td>
+                        </tr>
+                        <tr>
+                            <td>Alan</td>
+                            <td>Jellybean</td>
+                            <td>$3.76</td>
+                        </tr>
+                        <tr>
+                            <td>Jonathan</td>
+                            <td>Lollipop</td>
+                            <td>$7.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
+<<<<<<< HEAD
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="assets/javascript/materialize.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+=======
+        
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="assets/javascript/materialize.min.js"></script>
         <script src="assets/javascript/app.js"></script>
+>>>>>>> a1833cff4d6b7e6444c2c5930106dcef8d531422
 
-        <!-- External libraries -->
-        <script src="assets/javascript/imagesloaded.pkgd.min.js"></script>
-        <script src="assets/javascript/masonry.pkgd.min.js"></script>
-        <script src="assets/javascript/TweenMax.min.js"></script>
-        <script src="assets/javascript/ScrollMagic.min.js"></script>
-        <script src="assets/javascript/animation.gsap.min.js"></script>
+    <!-- External libraries -->
+    <script src="assets/javascript/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/javascript/masonry.pkgd.min.js"></script>
+    <script src="assets/javascript/TweenMax.min.js"></script>
+    <script src="assets/javascript/ScrollMagic.min.js"></script>
+    <script src="assets/javascript/animation.gsap.min.js"></script>
 
+<<<<<<< HEAD
+    <!-- Initialization script -->
+    <script src="assets/javascript/startup.js"></script>
+    <script src="assets/javascript/init.js"></script>
+=======
         <!-- Initialization script -->
         <script src="assets/javascript/startup.js"></script>
         <script src="assets/javascript/init.js"></script>
+        <script src="assets/javascript/gmap.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-ioPheidDGw5CGcEGrNxT6u3EniKOjnI&libraries=places&callback=initialize"></script>
+       
+>>>>>>> a1833cff4d6b7e6444c2c5930106dcef8d531422
 </body>
 
 </html>
