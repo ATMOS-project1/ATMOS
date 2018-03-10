@@ -29,11 +29,11 @@ $("#submit").on("click", function(event) {
     var results = response.fuel_stations;
     console.log(results);
 
+    // Emptying the display div
+    $("tbody").empty();
+
     // For loop to store the individual station information as variables to be displayed
     for (var i = 0; i < results.length; i++) {
-      // Emptying the display div
-      $("tbody").empty();
-
       // Creating a table row
       var stationRow = $("<tr id='" + [i] + "'>")
 
@@ -56,6 +56,9 @@ $("#submit").on("click", function(event) {
       // Displaying the station information in a new table row
       $(stationRow).append("<td>" + stationName + "</td><td>" + stationAddress + "</td><td>" +
       stationHours + "</td><td>" + stationPhone + "</td>");
+
+      // Displaying the row in the table
+      $("tbody").append(stationRow);
     };
   });
 });
