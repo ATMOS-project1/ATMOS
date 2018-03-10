@@ -21,11 +21,12 @@ $(document).ready(function() {
 	$("#submit").on("click", function(event) {
 		event.preventDefault();
 
+
 		//collects user input
-		var custState = $("#state").val().trim();
+		var custState = $("#state").val();
 		var custZip = $("#zip").val().trim();
-		var custLevel = $("#charging-level").val().trim();
-		var custType = $("#connector-type").val().trim();
+		var custLevel = $("#charging-level").val();
+		var custType = $("#connector-type").val();
 
 		//creates local 'temporary' object for holding customer data
 		var newAddr = {
@@ -45,10 +46,10 @@ $(document).ready(function() {
 		console.log(newAddr.type);
 
 		//clears all of the text values from Address form
-		$("#state").val("");
+		$('select').prop('selectedIndex', 0)
+		$('select').material_select();
 		$("#zip").val("");
-		$("#charging-level").val("");
-		$("#connector-type").val("");
+		
 
 	});
 
