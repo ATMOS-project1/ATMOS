@@ -58,5 +58,30 @@ $("#submit").on("click", function(event) {
       // Displaying the row in the table
       $("tbody").append(stationRow);
     };
+
+    var stationLatLong = [""]
+    
+    $("tbody").each(function(){
+      $(this).find('tr').each(function(){
+        
+        var rowLat = $(this).attr("data-latitude");
+          console.log(rowLat);
+        var rowLong = $(this).attr("data-longitude");
+          console.log(rowLong);
+
+        var rowLatLong = {
+          lat: rowLat,
+          long: rowLong
+          
+        };
+        console.log(rowLatLong);
+        stationLatLong.push(rowLatLong);
+        console.log(stationLatLong);
+      });
+    });
+
+    // initialize(stationLatLong);
+
   });
 });
+
