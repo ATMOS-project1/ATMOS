@@ -13,3 +13,8 @@
 .byebye {
     margin-bottom: -10px !important;
 }
+
+#map-canvas {
+    height: 1000px !important;
+    width: 1000px !important;
+}
