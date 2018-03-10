@@ -3,7 +3,7 @@
 //------------------//
 
 // Function to grab inputs and get the API information
-$(".btn").on("click", function(event) {
+$("#submit").on("click", function(event) {
   //Preventing the page from reloading after the button is clicked
   event.preventDefault();
 
@@ -43,8 +43,15 @@ $(".btn").on("click", function(event) {
       var stationHours = results[i].access_days_time;
       var stationPhone = results[i].station_phone;
 
-      // Setting a data attribute to store the address to be used in other API
-      stationRow.attr("data-address", stationAddress);
+      // Storing latitude and longitude to be used with Google Maps API
+      var stationLat = results[i].latitude;
+      var stationLong = results[i].longitude;
+      console.log(stationLong)
+      console.log(stationLat)
+
+      // Setting data attributes to lat and long
+      stationRow.attr("data-latitude", stationLat);
+      stationRow.attr("data-longitude", stationLong);
 
       // Displaying the station information in a new table row
       $(stationRow).append("<td>" + stationName + "</td><td>" + stationAddress + "</td><td>" +
@@ -54,9 +61,4 @@ $(".btn").on("click", function(event) {
       $("tbody").append(stationRow);
     };
   });
-
-  // $("#state").val("");
-  // $("#connector-type").val("");
-  // $("#zip").val("");
-  // $("#charging-level").val("");
 });
