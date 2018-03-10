@@ -56,6 +56,9 @@ $("#submit").on("click", function(event) {
       // Emptying the display div
       $("tbody").empty();
 
+      // Creating a table row
+      var stationRow = $("<tr id='" + [i] + "'>")
+
       // Storing information in variables
       var stationName = results[i].station_name;
       var stationAddress = results[i].street_address + " " + results[i].city + " " + results[i].state + " " + results[i].zip;
@@ -63,11 +66,16 @@ $("#submit").on("click", function(event) {
       var stationPhone = results[i].station_phone;
 
       // Setting a data attribute to store the address to be used in other API
-
+      stationRow.attr("data-address", stationAddress);
 
       // Displaying the station information in a new table row
-      $("tbody").append("<tr><td>" + stationName + "</td><td>" + stationAddress + "</td><td>" +
-      stationHours + "</td><td>" + stationPhone + "</td></tr>");
+      $(stationRow).append("<td>" + stationName + "</td><td>" + stationAddress + "</td><td>" +
+      stationHours + "</td><td>" + stationPhone + "</td>");
     };
   });
+
+  // $("#state").val("");
+  // $("#connector-type").val("");
+  // $("#zip").val("");
+  // $("#charging-level").val("");
 });
