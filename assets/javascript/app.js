@@ -35,10 +35,12 @@ $("#submit").on("click", function(event) {
       var stationPhone = results[i].station_phone;
       // Storing latitude and longitude to be used with Google Maps API
       var stationLat = results[i].latitude;
+      console.log(stationLat);
       var stationLong = results[i].longitude;
-      // Setting data attributes to lat and long
-      stationRow.attr("data-latitude", stationLat);
-      stationRow.attr("data-longitude", stationLong);
+      console.log(stationLong);
+
+      $(stationRow).attr("value", stationLat + "," + stationLong);
+
       // Displaying the station information in a new table row
       $(stationRow).append("<td>" + stationName + "</td><td>" + stationAddress + "</td><td>" +
       stationHours + "</td><td>" + stationPhone + "</td>");
