@@ -2,9 +2,9 @@
     color: #ffffff;
 }
 
-.map {
+/* .map {
     max-width: 100%;
-}
+} */
 
 .tall {
     height: auto !important;
@@ -12,9 +12,15 @@
 
 .byebye {
     margin-bottom: -10px !important;
+    /* height: auto !important;
+    width: 100% !important; */
 }
 
-#map-canvas {
-    height: 1000px !important;
-    width: 1000px !important;
+#map {
+    width: 100% !important;
+    height: 550px !important;
+}
+
+.wide {
+    width: 100% !important;
 }
