@@ -95,7 +95,7 @@
         <div class="container col s12 scrollspy">
             <div class="row">
                 <div class="input-field col s12">
-                    <select  id="state">
+                    <select id="state">
                         <option value="" disabled selected>State</option>
                         <option value="NC">North Carolina</option>
                         <option value="SC">South Carolina</option>
@@ -158,26 +158,13 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 byebye">
-                 <div id="map-canvas"></div> 
-                    <!-- <img class="map" src="assets/img/APPLIED LARGE Google map.jpg" alt=""> -->
+                    <div id="map">
+                    </div>
                 </div>
-
-                <label for="">Destination Address:
-                    <input id="map-search" class="controls" type="text" placeholder="Choose Destination" size="104">
-                </label>
-                <br>
-                <label for="">Lat:
-                    <input type="text" class="latitude">
-                </label>
-                <label for="">Long:
-                    <input type="text" class="longitude">
-                </label>
-            
-
                 <!-- /////////// -->
                 <!-- info output -->
                 <!-- /////////// -->
-                <div class="col s12">
+                <div class="col s12 wide">
                     <table class="centered teal accent-4">
                         <thead>
                             <tr>
@@ -188,14 +175,13 @@
                             </tr>
                         </thead>
                         <tbody>
-   
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
 
-        
+
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="assets/javascript/materialize.min.js"></script>
@@ -212,8 +198,8 @@
         <script src="assets/javascript/startup.js"></script>
         <script src="assets/javascript/init.js"></script>
         <script src="assets/javascript/gmap.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-ioPheidDGw5CGcEGrNxT6u3EniKOjnI&libraries=places&callback=initialize"></script>
-       
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPPUCQQD6XLCSr2fREwIfq3m976IK4OYw&callback=initMap"
+            type="text/javascript"></script>
 </body>
 
 </html>

@@ -47,6 +47,6 @@ $("#submit").on("click", function(event) {
     };
     
     });
-  initialize();
+  // initialize();
     
   });
