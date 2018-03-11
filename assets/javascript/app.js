@@ -2,7 +2,7 @@
 // All Stations API //
 //------------------//
 // Function to grab inputs and get the API information
-$("#submit").on("click", function(event) {
+$("#submit").on("click", function (event) {
   //Preventing the page from reloading after the button is clicked
   event.preventDefault();
   // Grabbing inputs to be stored as variables to be used in the URL
@@ -17,7 +17,7 @@ $("#submit").on("click", function(event) {
   $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(function(response) {
+  }).then(function (response) {
     console.log(response);
     // Storing the fuel stations array as a variable
     var results = response.fuel_stations;
@@ -35,18 +35,39 @@ $("#submit").on("click", function(event) {
       var stationPhone = results[i].station_phone;
       // Storing latitude and longitude to be used with Google Maps API
       var stationLat = results[i].latitude;
+      console.log(stationLat);
       var stationLong = results[i].longitude;
-      // Setting data attributes to lat and long
-      stationRow.attr("data-latitude", stationLat);
-      stationRow.attr("data-longitude", stationLong);
+      console.log(stationLong);
+
+      $(stationRow).attr("data-latitude", stationLat);
+      $(stationRow).attr("data-longitude", stationLong);
+
       // Displaying the station information in a new table row
       $(stationRow).append("<td>" + stationName + "</td><td>" + stationAddress + "</td><td>" +
-      stationHours + "</td><td>" + stationPhone + "</td>");
+        stationHours + "</td><td>" + stationPhone + "</td>");
       // Displaying the row in the table
       $("tbody").append(stationRow);
     };
-    
+
+
+
+    $("tbody").each(function () {
+      $(this).find('tr').each(function () {
+
+        var rowLat = $(this).attr("data-latitude");
+        console.log(rowLat);
+        var rowLong = $(this).attr("data-longitude");
+        console.log(rowLong);
+
+        var rowLatLong = rowLat + "," + rowLong;
+        console.log(rowLatLong);
+        stationLatLong.push(rowLatLong);
+      });
+      console.log(stationLatLong);
     });
-  // initialize();
+
     
   });
+
+
+});
