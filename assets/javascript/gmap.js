@@ -1,3 +1,6 @@
+var stationLatLong = [];
+
+
 function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 8,
@@ -15,7 +18,7 @@ function initMap() {
 }
 
 function geocodeLatLng(geocoder, map, infowindow) {
-	var latLngCoord = ["35.846916,-78.836095", "35.855398,-78.795502", "35.871651,-78.870597", "35.855528,-78.795671"];
+	// var latLngCoord = ["35.846916,-78.836095","35.855398,-78.795502"];
 	for (var i = 0; i < latLngCoord.length; i++) {
 		var input = latLngCoord[i];
 		var latlngStr = input.split(',', 2);
@@ -30,7 +33,7 @@ function geocodeLatLng(geocoder, map, infowindow) {
 				if (results[0]) {
 					map.setZoom(11);
 					var marker = new google.maps.Marker({
-						position: latlng,
+						position: results[0].geometry.location,
 						map: map
 					});
 					infowindow.setContent(results[0].formatted_address);
@@ -54,21 +57,7 @@ function geocodeLatLng(geocoder, map, infowindow) {
 
 
 
-    // $("tbody").each(function(){
-    //   $(this).find('tr').each(function(){
 
-    //     var rowLat = $(this).attr("data-latitude");
-    //       console.log(rowLat);
-    //     var rowLng = $(this).attr("data-longitude");
-    //       console.log(rowLng);
-    //     var rowLatLng = {
-    //       lat: rowLat,
-    //       lng: rowLng
-
-    //     };
-    //     console.log(rowLatLng);
-	// 	});
-    //   });
 
 // function initialize() {
 
