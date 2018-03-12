@@ -18,14 +18,15 @@ function initMap() {
 }
 
 function geocodeLatLng(geocoder, map, infowindow) {
-	// var latLngCoord = ["35.846916,-78.836095","35.855398,-78.795502"];
+      var latLngCoord = stationLatLong;
+      console.log(latLngCoord);
 	for (var i = 0; i < latLngCoord.length; i++) {
 		var input = latLngCoord[i];
 		var latlngStr = input.split(',', 2);
 		var latlng = {
 			lat: parseFloat(latlngStr[0]),
 			lng: parseFloat(latlngStr[1])
-		};
+            };
 		geocoder.geocode({
 			'location': latlng
 		}, function (results, status) {
