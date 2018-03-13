@@ -1,3 +1,4 @@
+// Google Maps function to create the map upon loading the page
 function initMap() {
       var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 8,
@@ -6,9 +7,12 @@ function initMap() {
                   lng: -78.836
             }
       });
+
+      // Creating Google Map variables to be used in the geocoding function
       var geocoder = new google.maps.Geocoder();
       var infowindow = new google.maps.InfoWindow();
 
+      // Function to grab inputs and run the All Stations API
       document.getElementById("submit").addEventListener("click", function () {
             // Preventing the page from reloading
             event.preventDefault();
@@ -17,7 +21,7 @@ function initMap() {
             var connectorType = $("#connector-type").val();
             var zip = $("#zip").val().trim();
             var chargingLevel = $("#charging-level").val();
-            // Creating URL using the inputs to search for fuel stations in the API
+            // Creating API URL using the user inputs
             var queryURL =
                   "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?zip=" +
                   zip +
@@ -41,6 +45,7 @@ function initMap() {
                   // Emptying the display div
                   $("tbody").empty();
 
+                  // Creating an empty array to hold latitude and longitude coordinates
                   var stationLatLong = [];
 
                   // For loop to store the individual station information as variables to be displayed
@@ -52,16 +57,16 @@ function initMap() {
                         var stationAddress = results[i].street_address + " " + results[i].city + " " + results[i].state + " " + results[i].zip;
                         var stationHours = results[i].access_days_time;
                         var stationPhone = results[i].station_phone;
-                        // Storing latitude and longitude in variables to be pushed to an array of coordinates to be used with Google Maps API
                         var stationLat = results[i].latitude;
-                        console.log(stationLat);
                         var stationLong = results[i].longitude;
-                        console.log(stationLong);
 
+                        // Storing the latitude and longitude in the format needed for the geocode function
                         var rowLatLong = stationLat + "," + stationLong;
 
+                        // Pushing the coordinates to the coordinates array
                         stationLatLong.push(rowLatLong);
 
+                        // Calling the geocode function with the variables needed
                         geocodeLatLng(geocoder, map, infowindow, stationLatLong);
 
                         // Displaying the station information in a new table row
@@ -73,27 +78,35 @@ function initMap() {
       });
 }
 
+// Geocode function to create markers using the coordinates of the fuel stations
 function geocodeLatLng(geocoder, map, infowindow, stationLatLong) {
+      // Looping through the array of coordinates to create separate markers for each      
       for (var i = 0; i < stationLatLong.length; i++) {
-            var input = stationLatLong[i];
-            var latlngStr = input.split(",", 2);
+            var latlngStr = stationLatLong[i].split(",", 2);
             var latlng = {
                   lat: parseFloat(latlngStr[0]),
                   lng: parseFloat(latlngStr[1])
             };
+            // Using the coordinates to get the location
             geocoder.geocode({
                         location: latlng
                   },
                   function (results, status) {
                         if (status === "OK") {
+                              // If there are results, then create marker
                               if (results[0]) {
                                     map.setZoom(11);
                                     var marker = new google.maps.Marker({
                                           position: results[0].geometry.location,
                                           map: map
                                     });
-                                    infowindow.setContent(results[0].formatted_address);
-                                    infowindow.open(map, marker);
+
+                                    // Creating a function to display the individual addresses upon clicking the marker
+                                    marker.addListener('click', function() {
+                                          infowindow.setContent(results[0].formatted_address);
+                                          infowindow.open(map, marker);
+                                    });
+                                    
                               } else {
                                     window.alert("No results found");
                               }
