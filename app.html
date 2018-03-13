@@ -145,12 +145,18 @@
             </div>
 
             <div class="row">
-                <button class="btn waves-effect waves-teal read-more" id="submit" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
-                </button>
+                <div class="input-field col s12">
+                    <button class="btn waves-effect waves-teal read-more" id="submit" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <button class="btn waves-effect waves-teal" id="ev" type="ev" name="action">
+                        <a href="https://chargehub.com/en/electric-car-charging-guide.html">
+                            <i class="icon-bolt left">Find Your Connector Type</i>
+                        </a>
+                    </button>
+                </div>
             </div>
         </div>
-
 
         <!-- /// -->
         <!-- Map -->
@@ -161,6 +167,7 @@
                     <div id="map">
                     </div>
                 </div>
+
                 <!-- /////////// -->
                 <!-- info output -->
                 <!-- /////////// -->
@@ -179,26 +186,26 @@
                     </table>
                 </div>
             </div>
+        </div>
 
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="assets/javascript/materialize.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
 
-            <!-- Scripts -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <script src="assets/javascript/materialize.min.js"></script>
-            <script src="assets/javascript/app.js"></script>
+        <!-- External libraries -->
+        <script src="assets/javascript/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/javascript/masonry.pkgd.min.js"></script>
+        <script src="assets/javascript/TweenMax.min.js"></script>
+        <script src="assets/javascript/ScrollMagic.min.js"></script>
+        <script src="assets/javascript/animation.gsap.min.js"></script>
 
-            <!-- External libraries -->
-            <script src="assets/javascript/imagesloaded.pkgd.min.js"></script>
-            <script src="assets/javascript/masonry.pkgd.min.js"></script>
-            <script src="assets/javascript/TweenMax.min.js"></script>
-            <script src="assets/javascript/ScrollMagic.min.js"></script>
-            <script src="assets/javascript/animation.gsap.min.js"></script>
-
-            <!-- Initialization script -->
-            <script src="assets/javascript/startup.js"></script>
-            <script src="assets/javascript/init.js"></script>
-            <script src="assets/javascript/gmap.js"></script>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPPUCQQD6XLCSr2fREwIfq3m976IK4OYw&callback=initMap"
-                type="text/javascript"></script>
+        <!-- Initialization script -->
+        <script src="assets/javascript/startup.js"></script>
+        <script src="assets/javascript/init.js"></script>
+        <script src="assets/javascript/gmap.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPPUCQQD6XLCSr2fREwIfq3m976IK4OYw&callback=initMap"
+            type="text/javascript"></script>
 </body>
 
 </html>
