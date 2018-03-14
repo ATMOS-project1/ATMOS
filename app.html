@@ -26,7 +26,7 @@
     <nav class="navbar navbar-solid-transition">
         <div class="nav-wrapper">
             <a href="horizontal-half.html" class="brand-logo">
-                <i class="icon-diamond"></i>
+                <i class=" material-icons">ev_stations</i>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li class="active">
             </a>
@@ -35,9 +35,9 @@
             </li>
             </ul>
             </a>
-            <!-- <a href="#" data-activates="slide-out" class="button-collapse right">
+            <a href="#" data-activates="slide-out" class="button-collapse right">
                 <i class="material-icons white-text">menu</i>
-            </a> -->
+            </a>
         </div>
     </nav>
 
@@ -53,7 +53,7 @@
                     <div class="collapsible-body">
                         <ul>
                             <li>
-                                <a href="index.html">About Atmos!</a>
+                                <a href="index.html">Our Website!</a>
                             </li>
                         </ul>
                     </div>
@@ -80,13 +80,7 @@
             </div>
         </div>
     </div>
-
-
-    <!-- Page Layout here -->
-    <!-- <div class="row section black valign-wrapper">
-            <div class="col s12 m6"> -->
-    <!-- Note that "m4 l3" was added -->
-    <!-- Grey navigation panel -->
+    
 
     <!-- /// -->
     <!--Form -->
@@ -129,28 +123,36 @@
 
             <div class="row">
                 <div class="input-field col s12" id="connector-type">
-                    <select class="icons">
-                        <option value="" disabled selected>Connector Type</option>
-                        <option value="all" data-icon="#" class="left circle">All</option>
-                        <option value="NEMA515" data-icon="#" class="left circle">NEMA 5-15</option>
-                        <option value="NEMA520" data-icon="#" class="left circle">NEMA 5-20</option>
-                        <option value="NEMA1450" data-icon="#" class="left circle">NEMA 14-50</option>
-                        <option value="J1772" data-icon="#" class="left circle">J1772</option>
-                        <option value="CHADEMO" data-icon="#" class="left circle">CHAdeMO</option>
-                        <option value="J1772COMBO" data-icon="#" class="left circle">SAE J1772 Combo</option>
-                        <option value="TESLA" data-icon="#" class="left circle">Tesla</option>
-                    </select>
-                    <label></label>
+                    </button>
+                    <ul>
+                        <li class="waves-effect waves-teal waves-light">
+                            <a href="https://chargehub.com/en/electric-car-charging-guide.html" target="blank">
+                                <i class="material-icons left">visibility</i>
+                            </a>
+                        </li>
+                        </button>
+                        <select class="icons">
+                            <option value="" disabled selected>Connector Type</option>
+                            <option value="all" data-icon="#" class="left circle">All</option>
+                            <option value="NEMA515" data-icon="#" class="left circle">NEMA 5-15</option>
+                            <option value="NEMA520" data-icon="#" class="left circle">NEMA 5-20</option>
+                            <option value="NEMA1450" data-icon="#" class="left circle">NEMA 14-50</option>
+                            <option value="J1772" data-icon="#" class="left circle">J1772</option>
+                            <option value="CHADEMO" data-icon="#" class="left circle">CHAdeMO</option>
+                            <option value="J1772COMBO" data-icon="#" class="left circle">SAE J1772 Combo</option>
+                            <option value="TESLA" data-icon="#" class="left circle">Tesla</option>
+                        </select>
+                        <label></label>
                 </div>
             </div>
 
             <div class="row">
-                <button class="btn waves-effect waves-teal read-more" id="submit" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
-                </button>
+                <div class="input-field col s12">
+                    <button class="btn waves-effect waves-teal read-more" id="submit" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                </div>
             </div>
         </div>
-
 
         <!-- /// -->
         <!-- Map -->
@@ -158,9 +160,10 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 byebye">
-                    <div id="map">
+                    <div class="d-text"id="map">
                     </div>
                 </div>
+
                 <!-- /////////// -->
                 <!-- info output -->
                 <!-- /////////// -->
@@ -181,7 +184,6 @@
             </div>
         </div>
 
-
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="assets/javascript/materialize.min.js"></script>
@@ -198,7 +200,7 @@
         <script src="assets/javascript/startup.js"></script>
         <script src="assets/javascript/init.js"></script>
         <script src="assets/javascript/gmap.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPPUCQQD6XLCSr2fREwIfq3m976IK4OYw&callback=initMap"
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbhb9u3sscRpjTn4D80yIginfWJ3qWSOw&callback=initMap"
             type="text/javascript"></script>
 </body>
 
